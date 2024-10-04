@@ -1,0 +1,28 @@
+{
+  "name": "module2-bug-fixing-and-refactoring-hardikvaghasiya",
+  "version": "1.0.0",
+  "description": "[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/iefxxnRK)\r # Module 2 - Flood Fill game\r Module 2 for DGL 213 Applied JavaScript.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DGL213-App-JavaScript-F24-CVS1/module2-bug-fixing-and-refactoring-Hardikvaghasiya.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DGL213-App-JavaScript-F24-CVS1/module2-bug-fixing-and-refactoring-Hardikvaghasiya/issues"
+  },
+  "homepage": "https://github.com/DGL213-App-JavaScript-F24-CVS1/module2-bug-fixing-and-refactoring-Hardikvaghasiya#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.11.1",
+    "eslint": "^9.11.1",
+    "globals": "^15.10.0"
+  }
+}
