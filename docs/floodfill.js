@@ -1,7 +1,7 @@
 "use strict";
 
 (() => {
-window.addEventListener("load", (event) => {
+window.addEventListener("load", () => {
 // *****************************************************************************
 // #region Constants and Variables
 
@@ -72,13 +72,16 @@ function transposeGrid() {
     for (let i = 0; i < grids.length; i++) {
     const currentGrid = grids[i];
     for (let j = 0; j < currentGrid.length; j++) {
-        const currentGridRow = Math.floor(j / CELLS_PER_AXIS);
-        const currentGridColumn = j % CELLS_PER_AXIS;
-        if (currentGridColumn >= currentGridRow) {
-            const tempCellStorage = currentGrid[j];
-            currentGrid[j] = currentGrid[currentGridColumn * CELLS_PER_AXIS + currentGridRow];
-            currentGrid[currentGridColumn * CELLS_PER_AXIS + currentGridRow] = tempCellStorage;
+        for (let j = 0; j < currentGrid.length; j++) {
+            const currentGridRow = Math.floor(j / CELLS_PER_AXIS);
+            const currentGridColumn = j % CELLS_PER_AXIS;
+            if (currentGridColumn > currentGridRow) {  // Transpose only off-diagonal elements
+                const tempCellStorage = currentGrid[j];
+                currentGrid[j] = currentGrid[currentGridColumn * CELLS_PER_AXIS + currentGridRow];
+                currentGrid[currentGridColumn * CELLS_PER_AXIS + currentGridRow] = tempCellStorage;
+            }
         }
+        
     }
     grids[i] = currentGrid;
     }
@@ -87,7 +90,8 @@ function transposeGrid() {
 
 function render(grid) {
     for (let i = 0; i < grid.length; i++) {
-        ctx.fillStyle = `rgb(${grid[i][0]}, ${grid[i][0]}, ${grid[i][2]})`;
+        //incorrect color 
+        ctx.fillStyle = `rgb(${grid[i][0]}, ${grid[i][1]}, ${grid[i][2]})`;
         ctx.fillRect((i % CELLS_PER_AXIS) * CELL_WIDTH, Math.floor(i / CELLS_PER_AXIS) * CELL_HEIGHT, CELL_WIDTH, CELL_HEIGHT);
     }
     playerScoreText.textContent = playerScore;
