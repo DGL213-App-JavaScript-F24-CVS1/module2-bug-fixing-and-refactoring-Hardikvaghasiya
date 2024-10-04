@@ -72,8 +72,6 @@ function transposeGrid() {
     for (let i = 0; i < grids.length; i++) {
     const currentGrid = grids[i];
     for (let j = 0; j < currentGrid.length; j++) {
-        const currentGridRow = Math.floor(j / CELLS_PER_AXIS);
-        const currentGridColumn = j % CELLS_PER_AXIS;
         for (let j = 0; j < currentGrid.length; j++) {
             const currentGridRow = Math.floor(j / CELLS_PER_AXIS);
             const currentGridColumn = j % CELLS_PER_AXIS;
